@@ -12,18 +12,39 @@ body{
     opacity:0.85;
     filter:blur(3px);
 }
-#header-text:hover{
-    opacity:1.0; 
-}
 #header-text{
     display: block;
     position:fixed;
     width: 100%;height:auto;
-    top:380px;
+    top:300px;
     text-align:center;
     font-family:Comic Sans MS;
-    font-size: 50px;
+    font-size: 65px;
     opacity:0.5;
     color:palevioletred;
     text-shadow:3px 4px 5px black;  
+    transition-property: font-size;
 }
+#header-text:hover{
+    opacity:1.0;
+    /*use transition to make font-size change in action.*/
+    transition-property: font-size;
+    transition-duration: 0.5s;
+    font-size: 75px;
+}
+.head_shot{
+    position:relative;
+}
+.head_shot img{
+    /*Use CSS3's transition property to implement fade out*/
+    position:absolute;
+    /*fade out*/
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.head_shot img:nth-of-type(2):hover{
+    opacity:0; /*set the second img to transparent now to show img1*/
+}
+
