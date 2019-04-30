@@ -1,0 +1,29 @@
+body{
+    margin:0;
+}
+.header-img{
+    display: block;
+    height:450px;
+    background-image: url("background.jpg");
+    padding:5px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity:0.85;
+    filter:blur(3px);
+}
+#header-text:hover{
+    opacity:1.0; 
+}
+#header-text{
+    display: block;
+    position:fixed;
+    width: 100%;height:auto;
+    top:380px;
+    text-align:center;
+    font-family:Comic Sans MS;
+    font-size: 50px;
+    opacity:0.5;
+    color:palevioletred;
+    text-shadow:3px 4px 5px black;  
+}
