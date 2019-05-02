@@ -3,41 +3,87 @@ body{
 }
 .header-img{
     display: block;
-    height:450px;
-    background-image: url("background.jpg");
+    height:300px;
+    width:auto;
+    background-image: url("database_background.jfif");
     padding:5px;
-    text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
     opacity:0.85;
-    filter:blur(3px);
+    filter:blur(2px);
 }
 #header-text{
     display: block;
-    position:fixed;
+    position:absolute;
     width: 100%;height:auto;
-    top:300px;
+    top:175px;
     text-align:center;
     font-family:Comic Sans MS;
     font-size: 65px;
     opacity:0.5;
-    color:palevioletred;
-    text-shadow:3px 4px 5px black;  
-    transition-property: font-size;
+    color:#F9DBBD;
+    font-weight:1000;
+    text-shadow:3px 4px 5px black;
+    animation-delay: 10s;
+    animation-name: DVD_effect;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+
 }
 #header-text:hover{
     opacity:1.0;
-    /*use transition to make font-size change in action.*/
-    transition-property: font-size;
-    transition-duration: 0.5s;
-    font-size: 75px;
 }
-.head_shot{
-    position:relative;
+#header-text:active{
+    animation-play-state: paused;
+}
+@keyframes DVD_effect{
+    0%{
+        margin-left:0%;
+        margin-right:0%;
+        margin-top:0%;
+        color:#F9DBBD;
+    }
+    15%{
+        margin-left:10%;
+        margin-top: 2.78%;
+        width:145.7%;
+        color:#FCA17D;
+    }
+    50%{
+        margin-left: -32.77%;
+        margin-top:-10.175%;
+        width:100%;
+        color:#DA627D;
+    }
+    65%{
+        margin-left:-32.77%;
+        margin-top: 2.78%;
+        color:#9A348E;
+    }
+    100%{
+        margin-left: 33.5%;
+        margin-top: -10.175%;
+        color:#ODO628;
+    }
+}
+
+.introduction{
+    position:absolute;
+    display: block;
+    height:500px;width:100%;
+    background-image: url(background.jpg);
+}
+.introduction .head_shot{
+    position:absolute;
+    top:30px;
+
 }
 .head_shot img{
     /*Use CSS3's transition property to implement fade out*/
     position:absolute;
+    left:50px;
     /*fade out*/
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
@@ -46,5 +92,29 @@ body{
 }
 .head_shot img:nth-of-type(2):hover{
     opacity:0; /*set the second img to transparent now to show img1*/
+}
+#quotation{
+    display: block;
+    position: absolute;
+    height: 200px;
+    width:700px;
+    top:30px;left:1000px;
+    font-size:28px;
+    color:aliceblue;
+    font-family: cursive;
+    font-weight: 800;
+    animation-name: typing-effect;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    overflow:hidden;
+    white-space: nowrap;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+}
+@keyframes typing-effect{
+    from{height:0px;}
+    to{height:200px;}
+
 }
 
