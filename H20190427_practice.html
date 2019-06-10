@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>This is a practice</title>
+    <link rel="stylesheet" type="text/css" href="H20190427_practice.css" />
+    <script src="https://kit.fontawesome.com/11c45be622.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="vue.js"></script>
+    <script src="H20190427_practice.js"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <header>    
+    <div class="header_div">
+        <div id="header-text">CHIH-CHIEH HUNG</div>
+    </div>
+    </header>
+    <!--introduction district-->
+    
+    <div class="introduction">
+        <div id="red-mask"></div>
+        <div id="quotation" onmouseover="quoOn();" onmouseout="quoOut();">
+            <p>我線性帶數被當過三次阿，那時侯我的老師還跟我說，</p>
+            <p>你連線性轉換都不會做，以後能做什麼？</p>
+            <p>當線性代數教授拉GAN。</p>
+        </div>
+        <div class="choosing-board">
+            <ul id="choosing-list">
+                <li id="home" onclick="titleChange('Home(主頁)'); homeContent();">Home(主頁)</li>
+                <li id="bio" onclick="titleChange('Biography(自傳)');bioContent();">Biography(自傳)</li>
+                <li id="edu" onclick="titleChange('Education(學歷)');eduContent();">Education(學歷)</li>
+                <li id="work" onclick="titleChange('Working Experience(工作經歷)'); workContent();">Working Experience(工作經歷)</li>
+                <li id="re" onclick="titleChange('Research(研究)'); resContent();">Research(研究)</li>
+                <li id="pub" onclick="titleChange('Publication(論文)'); pubContent();">Publication(論文)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="head_shot">
+        <img src="%E6%96%B7%E6%B0%B4%E6%B5%812.JPG" height="200" width=auto>
+        <img src="%E6%96%B7%E6%B0%B4%E6%B5%811.JPG" height="200" width=auto>
+    </div>
+    <div class="present">
+        <div id="chooseName">
+            基本資料(現在工作,實驗室...)
+        </div>
+        <div class="content">
+            <div id="home_content">
+                <ul>
+                    <li>Title(職稱):Assistant Professor(助理教授)</li>
+                    <li>Office (辦公室) : E654</li>
+                    <li>Office Number (辦公室電話) : 02-26215656#3633</li>
+                    <li>Fax Number (傳真號碼) : 02-26209749</li>
+                </ul>
+            </div>
+            <div id="bio_content">
+                <p>I'm an assistant professor of Tamkang University in Taiwan, an experienced data scietist and software development engineer.</p> 
+                <p>I play with data: I've played a very vital role in data science team in leading e-commerce firms, built data-driven decision systems, and created value in every perspectives by using data as the tool.</p>
+                <p>My passion is conceiving and building new-to-the-world analytical applications and methodologies that provide competitive advantage. I'm also committed to coaching early career data scientists, helping them develop both theoritical and pratical skillsets that I believe are critical to their success.
+                </p>
+            </div>
+            <div class="edu_content">
+                <div id="ms">
+                    <p>M.S.(2003 - 2005)</p>
+                    <img src="1200px-NCTU_emblem.svg.png">
+                    <p>National Chiao Tung University, Taiwan</p>
+                    <p>Department of Computer Science</p>
+                    <p>Thesis: Exploring Regression for Mining User Moving Patterns in a Mobile Computing System</p>
+                </div>
+                <div id="phd">
+                    <p>Ph.D (2005 - 2011)</p>
+                    <img src="1200px-NCTU_emblem.svg.png">
+                    <p>National Chiao Tung Univeristy, Taiwan</p>
+                    <p>Department of Computer Science</p>
+                    <p>Dissertation: A Study on Trajectory Pattern Mining and Applications</p>
+                </div>
+            </div>
+            <div class="work_content">
+                <img src="Yahoo-Icon.png" height="180" width="auto" onmouseover="detail_change('Yahoo');">
+                <img src="Rakuten-Ichiba-Japan.png" height="180" width="auto" onmouseover="detail_change('Rakuten');">
+                <img src="SMU.png" height="180" width="auto" onmouseover="detail_change('SMU');">
+                <img src="LARC.png" height="180" width="auto" onmouseover="detail_change('LARC');">
+                <img src="Tamkang_University_logo.png" height="180" width="auto" onmouseover="detail_change('TKU');">
+                <div id="work_detail">
+                    <p>title</p>
+                    <p>company/facility</p>
+                    <p>duration</p>
+                </div>
+            </div>
+            <div class="res_content">
+                <img src="database.png" id="db" height=236px;>
+                <a href="https://hdl.handle.net/11296/537cx7"><div id="db_topDiv"><p>大數據系統及分析技術</p></div></a>
+                
+                <img src="credit-card.png" height="236px" id="cre">
+                <div id="cre_topDiv"><p>電子商務應用</p></div>
+                
+                <img src= "mobile.png" height="236px" id="mob">
+                <a href="https://hdl.handle.net/11296/t8trb2"><div id="mob_topDiv"><p>行動資料探勘</p></div></a>
+            </div>
+            <div class="pub_content">
+                <p id="journal" onmouseover="pub_write('journal');" onclick="pub_write('journal');">Journal Publication</p>
+                <p id="conf" onmouseover="pub_write('conf');" onclick="pub_write('conf');">Conference Paper</p>
+                <div id="pub_journal">
+                    <p>Y.-W. Chen, J.-T. Hsu, C.-C. Hung, J.-M. Wu, F.-P. Lai, S.-Y. Kuo,``Surgical Wounds Assessment System for Self-Care'', IEEE Transactions on Systems, Man and Cybernetics: Systems, To Appear</p>
+                    <p>C.-C. Hung, W.-C. Peng, and W.-C. Lee, ``Clustering and Aggregating Clues of Trajectories for Trajectory Pattern Mining'', Very Large Data Base Journal, Vol.24, No.2, pp. 162-192, 2015</p>
+                    <p>W.-Y. Zhu, W.-C. Peng, C.-C. Hung, P. -R. Lai and L.-J. Chen,``Exploring Sequential Probability Tree for Movement-based Community Discovery,"IEEE Trans. on Knowledge and Data Engineering, Vol. 26, No.11, pp. 2717-2730, 2014.</p>
+                    <p>C.-C. Hung, W.-C. Peng, and W.-C. Lee, “Set-covering-based Algorithms for Approximate Data Collection in Wireless Sensor Networks”, IEEE Transaction on Knowledge and Data Engineering, Vol. 24, No. 11, pp. 1993-2007, 2012.</p>
+                    <p>C.-C. Hung, and W.-C. Peng, “Optimizing In-Network Aggregate Queries in Wireless Sensor Networks for Energy Saving,” Data and Knowledge Engineering, Vol. 70, No. 7, pp. 617-641, 2011.</p>
+                    <p>C.-C. Hung, and W.-C. Peng, “A Regression-based Approach for Mining User Movement Patterns from Random Sample Data”, Data and Knowledge Engineering, Vol. 70, No. 1, pp. 1-20, 2011</p>
+                </div>
+                <div id="pub_conf">
+                    <p>C.-C. Hung, C.-Y. Kuo, H.-H. Hsu and Y.-A. Chen, ``Identifying Niche Singers in Online Music Streaming Services'', Proceedings of 4th International Conference on Big Data Intelligence and Computing and Cyber Science and Technology Congress (CyberSciTech), 2018</p>
+                    <p>F.-C. Hsu and C.-C. Hung, ``Fusion of Modern and Tradition: A Multi-stage-Based Deep Network Approach for Head Detection'', Proceedings of Advances in Knowledge Discovery and Data Mining - 22nd Pacific-Asia Conference (PAKDD), 2018</p>
+                    <p>C.-Y. Lin, C.-C. Hung, P.-R. Lei, ``﻿A velocity-preserving trajectory simplification approach'', Proceedings of Conference on Technologies and Applications of Artificial Intelligence (TAAI), 2016</p>
+                    <p>Ivy H.-I. Hoi, Mars L. Liao, C.-C. Hung, Evans Tseng, ``BRF: A Framework of Retrieving Brand Names of Products in Auction Sites,’’ Proceedings of E-Commerce and Web Technologiess, 2013</p>
+                    <p>Lu-An Tang, Y. Zheng, J. Yuan, Jiawei Han, Alice Leung, C.-C. Hung, and W.-C. Peng, ``On Discovery of Traveling Companions from Streaming Trajectories," Proceedings of the 28th IEEE International Conference on Data Engineering, Washington, DC, USA, April 1-5, 2012.</p>
+                    <p>C.-C. Hung and W.-C. Peng, ``Clustering Fragmented Trajectories for Mining Movement Behaviors," Proceedings of the 2011 International Workshop on Behavior Informatics (In conjunction with PAKDD), Shenzhen, China, May 24, 2011</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>   
+</body>
+<footer>
+    <div id="contact">Contact(聯絡方式)</div>
+    <div class="contact_icon">
+        <a href="https://tw.linkedin.com/in/oshin-chih-chieh-hung-5b783631"><img src="facebook.png" id="fb" height="200px"></a>
+        <a href="mailto:smalloshin@gms.tku.edu.tw"><img src="mail.png" id="mail" height="200px"></a>
+        <a href="http://teacher.tku.edu.tw/PsnSchoolTime.aspx?u=t962217"><img src="Tamkang_University_logo.png" height="200" width="auto" id="tku"></a>
+    </div>
+    <div id="author"><small>Copyright © 2019 by Eric.Chao</small></div>
+</footer>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>It's a Personal-site</title>
+    <link rel="stylesheet" type="text/css" href="loading.css" />
+    <script src="https://kit.fontawesome.com/11c45be622.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <img src="database_background.jfif" id="background-img">
+    <div id="mask"></div>
+    <div class="nameDiv">
+        
+        <p id="name">
+            CHIH-CHIEH HUNG
+        <script>
+            $("p#name").fadeIn("slow");            
+        </script>
+        </p>
+        
+    </div>
+    <div id="typing-title">
+    <script>
+        var title=document.getElementById("typing-title");
+        var title1="Assistant Professor";
+        var title2="Data Scientist";
+        var title3="SDE/Research Engineer";
+        //取得stylesheet的子物件cssrules rules後面的選擇是因應IE
+        var ss = document.styleSheets[0];
+        var rules = ss.cssRules?ss.cssRules:ss.rules;
+        var timerId_1;
+        var timerId_2;
+        var timerId_3;
+        function ChangeToTitle1(){
+            console.log("testing1");
+            title.innerHTML=title1;
+            title.style.animationTimingFunction="steps(20),steps(1)";
+            ss.deleteRule(5);
+            ss.insertRule("@keyframes typing-effect-forward{from{width:0em;}to{width:11em;}}",5);
+            timerId_2=setTimeout(ChangeToTitle2,7400);
+        }
+        function ChangeToTitle2(){
+            console.log("testing2");
+            title.innerHTML=title2;
+            title.style.animationTimingFunction="steps(15),steps(1)";
+            title.style.animationDuration="3.4s,0.5s";
+            ss.deleteRule(5);
+            ss.insertRule("@keyframes typing-effect-forward{from{width:0em;}to{width:8.2em;}}",5);
+            timerId_3=setTimeout(ChangeToTitle3,6400);
+        }
+        function ChangeToTitle3(){
+            console.log("testing3");
+            title.innerHTML=title3;
+            title.style.animationTimingFunction="steps(22),steps(1)";
+            ss.deleteRule(5);
+            ss.insertRule("@keyframes typing-effect-forward{from{width:0em;}to{width:12em;}}",5);
+            timerId_1=setTimeout(ChangeToTitle1,6700);
+        }
+        ChangeToTitle1();
+    </script>
+    </div>
+    <div>
+        <a href="H20190427_practice.html"><button class="btn2Main"><i class="fas fa-database">Check out my profile!</i></button></a>
+        
+    </div>
+    
+    
+    
+</body>
+</html>
