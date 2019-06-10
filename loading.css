@@ -81,5 +81,23 @@ body{
     transition-duration: 1s;
     background-color: #F0FFCE;
 }
+.btn2Part{
+    display: block;
+    position: absolute;
+    left:50%;top:55%;
+    background-color: #2D2D34;
+    border-style: double;
+    color:#B97375;
+    padding: auto;
+    font-size:35px;
+    margin:-23px 0 0 -95px;
+    cursor:pointer;
+}
+.btn2Part:hover{
+    transition-property: background-color;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+    background-color: #F0FFCE;
+}
 
 
